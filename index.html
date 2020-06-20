@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ES6 Pictionary</title>
+        <meta name="description" content="">
+        <link rel="icon" type="image/png" href="http://nstatic.fortyfivefourteen.com/favi.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            main{
+                overflow: hidden;
+                height:0;
+                transition: 1s all ease;
+            }
+        </style>
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-4007041-1', 'auto');
+        ga('send', 'pageview');
+        ga('send', {
+            'hitType': 'event',
+            'eventCategory': 'user action',
+            'eventAction': 'initial load',
+            'eventLabel': '',
+            'eventValue': 1
+        });
+    </script>
+    </head>
+    <body>
+        <main>
+            <a href="./" class="reset-link">reset data</a>
+            <h3 id="points"></h3>
+            <h1 id="word">PICTIONARY</h1>
+            <h3 id="timer" class="em-2"></h3>
+            <p id="start-instructions">Turn the screen away from crowd and push start button.</p>
+            <h2 id="start" class="">START</h2>
+            <h2 id="ready" class="alt">READY?</h2>
+            <h2 id="stop-timer" class="stop-timer smaller alt">END ROUND</h2>
+            <section class="tabContainer" id="customWordsContainer">
+                <div class="tab" data-target = "customWordsContainer" >Word List (word, points, category)</div>
+                <textarea id="customWordsTXT"></textarea>
+            </section>
+
+            <section class="tabContainer" id="optionsTab">
+                <div class="tab" data-target = "optionsTab" >Options</div>
+                <div id="optionsContainer">
+                    <h5>Time in Seconds</h5>
+                    <input type="number" id="seconds" value="30">
+                    <button class="timerVals" value="60" >60</button>
+                    <button class="timerVals" value="45" >45</button>
+                    <button class="timerVals" value="30" >30</button>
+                    <button class="timerVals" value="20" >20</button>
+                    <button class="timerVals" value="15" >15</button>
+                    <button class="timerVals" value="10" >10</button>
+                    <h5>Points Filter (incomplete)</h5>
+                    <ul id="points-filters">
+                            
+                    </ul>
+                    <h5>Category Filter (incomplete)</h5>
+                    <ul id="cat-filters">
+                            
+                    </ul>
+                </div>
+            </section>
+        </main>
+       
+    </body>
+    <script>
+
+        addCSS("main.css")
+        addScript("main.js")
+        addScript("default-words.js")
+
+
+        function addCSS(e){
+            let link = document.createElement("link");
+            link.rel="stylesheet"
+            link.type="text/css"
+            link.href=e+"?r="+Math.random();
+
+            document.querySelector("body").appendChild(link);
+        }
+
+
+        function addScript(e){
+            let script = document.createElement("script")
+            script.src=e+"?r="+Math.random();
+            document.querySelector("body").appendChild(script);
+
+        }
+
+    </script>
+</html>
